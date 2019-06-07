@@ -12,4 +12,14 @@ class PostController extends Controller
         $posts = Post::published()->paginate();
         return view('posts.index', compact('posts'));
     }
+
+    public function create() {
+        return view('posts.create');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
 }
